@@ -1,4 +1,4 @@
-# Mashup Assignment (Program 1 + Program 2)
+# Mashup Assignment
 
 **Name:** Rohan Malhotra  
 **Roll No:** 102303437  
@@ -6,7 +6,7 @@
 This repo contains:
 
 - **Program 1 (CLI):** `102303437.py`  
-- **Program 2 (Web Service):** `webapp/` (Flask web app, Replit-ready)
+- **Program 2 (Web Service):** `webapp/`
 
 ---
 
@@ -32,35 +32,20 @@ python 102303437.py "Sharry Maan" 20 20 102303437-output.mp3
 
 ---
 
-## Program 2 (Web Service) - Replit Deployment
+## Program 2 – Mashup Web Service
 
-Open `webapp/` in Replit.
+This mashup web service is deployed on Render.
 
-### Files
-- `app.py` - Flask server
-- `mashup.py` - mashup generator
-- `mailer.py` - email sender via SMTP
-- `replit.nix` - installs FFmpeg on Replit
-- `requirements.txt` - python deps
-- `templates/index.html` - UI
+Deployed Link:
+https://assignment07-mashup-2.onrender.com
 
-### Environment variables (Replit Secrets)
-Set the following in Replit **Secrets**:
-- `SMTP_HOST` (e.g. `smtp.gmail.com`)
-- `SMTP_PORT` (e.g. `587`)
-- `SMTP_USER` (your email)
-- `SMTP_PASS` (Gmail App Password recommended)
-- `FROM_EMAIL` (optional, default = SMTP_USER)
+## What it does
 
-### Run
-Replit should run:
-```bash
-python app.py
-```
+The web service takes the following inputs from the user:
+- Singer name
+- Number of videos (N > 10)
+- Duration per clip in seconds (Y > 20)
+- Email ID
 
-Then open the web URL, fill the form, and you’ll receive a ZIP file by email.
+It downloads N YouTube videos of the given singer, converts them to audio, trims the first Y seconds from each audio file, merges all clips into one mashup MP3, compresses the result into a ZIP file, and sends the ZIP file to the provided email address.
 
----
-
-## Anti-plagiarism note
-This code is written specifically for roll number **102303437** and uses a straightforward implementation with `yt-dlp` + `pydub`.
